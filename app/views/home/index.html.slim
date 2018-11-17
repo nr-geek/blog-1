@@ -1,3 +1,7 @@
 h1 Hello
-p This is my first Rails application
-p End
+p
+  | You've seen this page
+  '
+  = session[:times_here]
+  '
+  | times
