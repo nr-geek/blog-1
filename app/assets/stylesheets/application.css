@@ -20,8 +20,8 @@ body {
 
 .header {
   font-family: Georgia;
+  font-style: italic;
   border-bottom: 1px solid;
-  padding-bottom: 20px;
   text-align: center;
   border-bottom-left-radius: 50% 100%;
   border-bottom-right-radius: 50% 100%;
@@ -37,6 +37,10 @@ body {
 
 .content a:visited {
   color: black;
+}
+
+.content a:hover {
+  color: coral;
 }
 
 .footer {
@@ -61,4 +65,8 @@ body {
 
 .footer a:visited {
   color: white;
+}
+
+.footer a:hover {
+  color: coral;
 }
