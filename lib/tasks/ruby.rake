@@ -4,7 +4,7 @@ namespace :ruby do
     puts Dir[Rails.root.join('**', '*.rb')].count{ |path| File.file?(path) }
   end
 
-  desc "TODO"
+  desc "Count lines in ruby files"
   task lines: :environment do
     count = 0
     Dir[Rails.root.join('**', '*.rb')].each do |path|
