@@ -35,6 +35,10 @@ body {
   margin-right: auto;
 }
 
+.content a:visited {
+  color: black;
+}
+
 .footer {
   font-family: Arial;
   position: absolute;
@@ -53,4 +57,8 @@ body {
   border-top-right-radius: 50% 100%;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.footer a:visited {
+  color: white;
 }
