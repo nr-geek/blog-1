@@ -6,8 +6,11 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :commented_posts, through: :comments, source: :commentable, source_type: :Post
   has_many :commented_users, through: :comments, source: :commentable, source_type: :User
+  has_many :marks, dependent: :destroy
+  has_many :marked_posts, through: :marks, source: :post
 
   before_destroy :log_before_destroy
+
 
   private
 
