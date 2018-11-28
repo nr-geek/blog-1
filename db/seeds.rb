@@ -48,8 +48,37 @@ end
 Comment.create! comments_data
 
 puts 'Creating marks'
-users.each do |user|
-  posts.sample(rand(0..10)) do |post|
-    Mark.create! user: user, post: post, value: rand(1..5)
+marks_data = users.flat_map do |user|
+  posts.sample(rand(0..10)).map do |post|
+    {
+      user: user,
+      post: post,
+      value: rand(1..5)
+    }
   end
 end
+
+Mark.create! marks_data
+
+puts 'Creating seos'
+seos_data = []
+
+posts.each do |post|
+  seos_data << {
+    seoable: post,
+    keywords: FFaker::Lorem.words,
+    title: post.title,
+    description: post.body[0...100]
+  }
+end
+
+users.each do |user|
+  seos_data << {
+    seoable: user,
+    keywords: FFaker::Lorem.words,
+    title: user.name,
+    description: user.name
+  }
+end
+
+Seo.create! seos_data
