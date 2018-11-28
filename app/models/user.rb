@@ -11,10 +11,12 @@ class User < ApplicationRecord
 
   before_destroy :log_before_destroy
 
+  scope :moderators, -> { where(moderator: true) }
+  scope :creators, -> { where(creator: true) }
 
   private
 
   def log_before_destroy
-    Rails.logger.info "Хочу удалить пользователя #{@id} #{@name}"
+    Rails.logger.info "Хочу удалить пользователя #{self.id} #{self.name}"
   end
 end
