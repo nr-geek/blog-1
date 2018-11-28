@@ -1,0 +1,21 @@
+h1 Listing posts
+
+table
+  thead
+    tr
+      th Title
+      th Body
+      th User
+      th
+      th
+      th
+
+  tbody
+    = render @posts
+
+br
+
+= link_to 'New Post', new_post_path
+
+p
+  = paginate @posts
