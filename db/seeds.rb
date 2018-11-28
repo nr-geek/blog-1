@@ -66,7 +66,7 @@ seos_data = []
 posts.each do |post|
   seos_data << {
     seoable: post,
-    keywords: FFaker::Lorem.words,
+    keywords: FFaker::Lorem.words.join(', '),
     title: post.title,
     description: post.body[0...100]
   }
