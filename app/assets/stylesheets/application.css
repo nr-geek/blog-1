@@ -24,9 +24,7 @@ html, body {
 }
 
 .content {
-  min-height: 100%;
-  height: auto;
-  margin-bottom: -30px;
+  min-height: calc(100% - 30px);
 }
 
 .header {
