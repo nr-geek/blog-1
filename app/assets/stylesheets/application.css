@@ -14,15 +14,26 @@
  *= require_self
  */
 
-body {
+html, body {
   margin: 0;
+  height: 100%;
+}
+
+.footer {
+  height: 30px;
+}
+
+.content {
+  min-height: 100%;
+  height: auto;
+  margin-bottom: -30px;
 }
 
 .header {
   font-family: Georgia;
   font-style: italic;
-  border-bottom: 1px solid;
   text-align: center;
+  border-bottom: 1px solid;
   border-bottom-left-radius: 50% 100%;
   border-bottom-right-radius: 50% 100%;
 }
@@ -45,22 +56,17 @@ body {
 
 .footer {
   font-family: Arial;
-  position: absolute;
   right: 0;
-  bottom: 0;
   left: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding: 1rem;
-  background-color: black;
-  color: white;
   text-align: center;
   max-width: 800px;
   width: 60%;
-  margin-left: auto;
-  margin-right: auto;
   border-top-left-radius: 50% 100%;
   border-top-right-radius: 50% 100%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-top: 1px solid;
 }
 
 .footer a:visited {
