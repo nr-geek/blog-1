@@ -4,12 +4,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.includes(:user).page(params[:page]).per(2).all
+    @posts = Post.includes(:user).page(params[:page]).per(2)
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comments = @post.comments.includes(:user).order(created_at: :desc).page(params[:page]).per(2)
   end
 
   # GET /posts/new
@@ -62,13 +63,14 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:title, :body, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.includes(:user).find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:title, :body, :user_id)
+  end
 end
