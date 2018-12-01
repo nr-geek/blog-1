@@ -61,6 +61,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  config.i18n.default_locale = :ru
+
   config.generators do |g|
     g.orm             :active_record
     g.template_engine :slim
@@ -69,4 +71,6 @@ Rails.application.configure do
     g.javascripts     false
     g.helper          false
   end
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

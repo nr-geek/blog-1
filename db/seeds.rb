@@ -16,6 +16,7 @@ puts 'Creating users'
 users_data = 10.times.map do
   {
     email: FFaker::Internet.email,
+    password: '123123',
     name: FFaker::Internet.user_name[0...16]
   }
 end
