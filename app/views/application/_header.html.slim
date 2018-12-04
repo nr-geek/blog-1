@@ -4,9 +4,13 @@ p
   - if user_signed_in?
     = t('hello', name: current_user.name)
     br
-    = link_to 'log out', destroy_user_session_path, method: :delete
+    ul
+      li = link_to 'log out', destroy_user_session_path, method: :delete
   - else
-    = t('login_links_html', login: link_to('log in', new_user_session_path), register: link_to('register', new_user_registration_path))
+    ul
+      li = link_to t('login_via', provider: 'Facebook'), user_facebook_omniauth_authorize_path
+      li = link_to t('login'), new_user_session_path
+      li = link_to t('register'), new_user_registration_path
     / = link_to 'log in', new_user_session_path
     / | or
     / = link_to 'register', new_user_registration_path
