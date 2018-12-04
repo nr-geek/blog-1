@@ -5,7 +5,8 @@ p
     = t('hello', name: current_user.name)
     br
     ul
-      li = link_to 'log out', destroy_user_session_path, method: :delete
+      li = link_to t('logout'), destroy_user_session_path, method: :delete
+      li = link_to t('edit_profile'), edit_user_path(current_user)
   - else
     ul
       li = link_to t('login_via', provider: 'Facebook'), user_facebook_omniauth_authorize_path

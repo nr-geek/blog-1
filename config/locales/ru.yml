@@ -3,3 +3,5 @@ ru:
   login_via: Войдите через %{provider}
   login: Войдите
   register: Зарегистрируйтесь
+  edit_profile: Редактировать профиль
+  logout: Выйти

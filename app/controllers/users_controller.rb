@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    redirect_to root_path and return unless can_edit_profile?
   end
 
   # POST /users
@@ -42,7 +43,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -62,13 +63,18 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:name, :email, :creator, :moderator)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:name, :email, :creator, :moderator)
+  end
+
+  def can_edit_profile?
+    user_signed_in? && current_user == @user
+  end
 end

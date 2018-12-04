@@ -15,7 +15,7 @@ class User < ApplicationRecord
   scope :moderators, -> { where(moderator: true) }
   scope :creators, -> { where(creator: true) }
 
-  validates :name, presence: true, length: { maximum: 16, minimum: 2 }
+  validates :name, presence: true, length: { maximum: 50, minimum: 2 }
   validates :email, presence: true
 
   before_destroy :log_before_destroy

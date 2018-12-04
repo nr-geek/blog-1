@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # devise_for :users
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  resources :users
+  resources :users, only: [:edit, :update]
   resources :posts
 
   # get '/posts(.:format)', to: 'posts#index', as: :posts
