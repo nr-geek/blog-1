@@ -1,0 +1,5 @@
+ru:
+  hello: Привет, %{name}
+  login_via: Войдите через %{provider}
+  login: Войдите
+  register: Зарегистрируйтесь

@@ -62,6 +62,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.i18n.default_locale = :ru
+  config.i18n.available_locales = [:ru, :en]
 
   config.generators do |g|
     g.orm             :active_record
