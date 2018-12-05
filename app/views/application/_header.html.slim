@@ -6,7 +6,12 @@ p
     br
     = link_to 'log out', destroy_user_session_path, method: :delete
   - else
-    = t('login_links_html', login: link_to('log in', new_user_session_path), register: link_to('register', new_user_registration_path))
+    = link_to('log in', new_user_session_path)
+    | &nbsp;
+    = link_to('register', new_user_registration_path)
+    | &nbsp;
+    = link_to 'login via facebook', user_facebook_omniauth_authorize_path
     / = link_to 'log in', new_user_session_path
     / | or
     / = link_to 'register', new_user_registration_path
+
