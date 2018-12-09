@@ -9,4 +9,4 @@
 
 import "./application.css"
 import "components/page/page"
-import "components/init/init"
+import "init"
