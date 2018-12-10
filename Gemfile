@@ -46,6 +46,7 @@ group :development, :test do
   gem 'capistrano-rails', require: false
   gem 'capistrano-rvm', require: false
   gem 'capistrano-bundler', require: false
+  gem 'capistrano-puma', require: false
 end
 
 group :development do
