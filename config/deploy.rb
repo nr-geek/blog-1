@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "blog"
-set :repo_url, "git@github.com:nirname/blog-1.git"
+set :repo_url, "git@github.com:nrgeek/blog-1.git"
 
 # Default branch is :master
 set :branch, 'deploy'
