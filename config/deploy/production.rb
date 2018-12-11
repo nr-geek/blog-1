@@ -1,3 +1,5 @@
+server '31.186.103.128', user: 'root', roles: %w(web db)
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -59,7 +61,3 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-
-server '5.188.114.128',
-  user: 'root',
-  roles: %w(web db)
