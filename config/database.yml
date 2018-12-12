@@ -11,8 +11,8 @@ test:
   <<: *default
   database: blog_test
 
-production:
-  <<: *default
-  database: blog_production
-  username: blog
-  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: blog_production
+#   username: blog
+#   password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
