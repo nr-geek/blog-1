@@ -13,8 +13,7 @@ port        ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
 #
-rails_env = ENV.fetch("RAILS_ENV") { "development" }
-environment rails_env
+environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
@@ -32,9 +31,4 @@ environment rails_env
 # preload_app!
 
 # Allow puma to be restarted by `rails restart` command.
-if rails_env == 'production'
-  set :puma_bind, %w(tcp://0.0.0.0:3000)
-  preload_app!
-else
-  plugin :tmp_restart
-end
+plugin :tmp_restart
