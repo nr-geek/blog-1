@@ -33,6 +33,7 @@ environment rails_env
 
 # Allow puma to be restarted by `rails restart` command.
 if rails_env == 'production'
+  set :puma_bind, %w(tcp://0.0.0.0:3000)
   preload_app!
 else
   plugin :tmp_restart
