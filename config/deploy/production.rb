@@ -1,4 +1,4 @@
-server '31.186.103.128', user: 'root', roles: %w(web db)
+server '31.186.103.128', user: 'root', roles: %w(app web db)
 
 # server-based syntax
 # ======================
